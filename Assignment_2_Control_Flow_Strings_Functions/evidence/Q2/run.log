@@ -1,0 +1,62 @@
+
+ blank then success
+Blank entry: not counted
+Incorrect OTP
+OTP verified
+verify_while (2, 'verified')
+Blank entry: not counted
+Incorrect OTP
+OTP verified
+verify_for (2, 'verified')
+
+ three wrong
+Incorrect OTP
+Incorrect OTP
+Incorrect OTP
+Account locked for 30 minutes
+verify_while (3, 'locked')
+Incorrect OTP
+Incorrect OTP
+Incorrect OTP
+Account locked for 30 minutes
+verify_for (3, 'locked')
+
+ early success
+OTP verified
+verify_while (1, 'verified')
+OTP verified
+verify_for (1, 'verified')
+
+ blank entries do not count
+Blank entry: not counted
+Blank entry: not counted
+Incorrect OTP
+Incorrect OTP
+Blank entry: not counted
+Incorrect OTP
+Account locked for 30 minutes
+verify_while (3, 'locked')
+Blank entry: not counted
+Blank entry: not counted
+Incorrect OTP
+Incorrect OTP
+Blank entry: not counted
+Incorrect OTP
+Account locked for 30 minutes
+verify_for (3, 'locked')
+
+ security answer grants two
+Incorrect OTP
+Incorrect OTP
+Incorrect OTP
+Incorrect OTP
+OTP verified
+verify_while (5, 'verified')
+Incorrect OTP
+Incorrect OTP
+Incorrect OTP
+Incorrect OTP
+OTP verified
+verify_for (5, 'verified')
+break stops on success; continue skips blanks; pass is a no-op; loop-else locks only on exhaustion.
+while is natural for unknown blank-input counts. Iterative O(a) time/O(1) space; recursion O(a) stack.
