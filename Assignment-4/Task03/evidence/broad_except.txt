@@ -1,0 +1,1 @@
+Program continued; the NameError was hidden.

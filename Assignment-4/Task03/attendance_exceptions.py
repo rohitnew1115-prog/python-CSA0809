@@ -1,39 +1,68 @@
-"""Task 3: strict attendance parsing and explicit exception boundaries."""
+"""Task 3: custom record errors and the supplied Complete the Code exercise."""
 from pathlib import Path
+import tempfile
+from datetime import date
 
-class InvalidRecord(ValueError):
-    def __init__(self, message: str, source: str, line_number: int):
-        super().__init__(f"{source}:{line_number}: {message}")
-        self.source=source; self.line_number=line_number
 
-def parse_line(raw: str, source: str, line_number: int):
-    fields=raw.rstrip("\r\n").split(".")
-    if len(fields)!=3: raise InvalidRecord(f"expected 3 fields, found {len(fields)}",source,line_number)
-    reg, day, status=(f.strip() for f in fields)
-    if not reg: raise InvalidRecord("empty register number",source,line_number)
-    from datetime import date
-    try: date.fromisoformat(day)
-    except ValueError as exc: raise InvalidRecord(f"invalid date {day!r}",source,line_number) from exc
-    if status not in {"P","A"}: raise InvalidRecord(f"invalid status {status!r}",source,line_number)
-    return reg,day,status
+class InvalidRecord(Exception):
+    """Raised when an attendance record is not three fields with P/A status."""
 
-def process_file(path: Path):
-    valid=[]; errors=[]; source=None
+
+def parse_line(line):
+    parts = [part.strip() for part in line.strip().split(",")]
+    if len(parts) != 3:
+        raise InvalidRecord(f"expected 3 fields, found {len(parts)}")
     try:
-        source=path.open("r",encoding="utf-8")
-        for line_number,raw in enumerate(source,1):
-            if not raw.strip(): continue
-            try: valid.append(parse_line(raw,path.name,line_number))
-            except InvalidRecord as exc: errors.append(str(exc))
-    except OSError as exc:
-        raise RuntimeError(f"cannot read attendance file {path}") from exc
+        date.fromisoformat(parts[1])
+    except ValueError as exc:
+        raise InvalidRecord(f"invalid date {parts[1]!r}") from exc
+    if parts[2] not in {"P", "A"}:
+        raise InvalidRecord(f"invalid status {parts[2]!r}")
+    return tuple(parts)
+
+
+def summarise(path):
+    present, absent, errors = 0, 0, []
+    try:
+        with open(path, "r", encoding="utf-8") as source:
+            for line_number, line in enumerate(source, 1):
+                try:
+                    _, _, status = parse_line(line)
+                except InvalidRecord as exc:
+                    errors.append((line_number, str(exc)))
+                else:
+                    if status == "P":
+                        present += 1
+                    else:
+                        absent += 1
+    except FileNotFoundError as exc:
+        raise FileNotFoundError(f"attendance file not found: {path}") from exc
+    except PermissionError as exc:
+        raise PermissionError(f"permission denied: {path}") from exc
+    except UnicodeDecodeError as exc:
+        raise ValueError(f"attendance file is not UTF-8: {path}") from exc
+    return present, absent, errors
+
+
+def run_supplied_example():
+    data = (
+        "192311001,2026-10-08,P\n192311002,2026-10-08,A\n"
+        "192311003,2026-10-08\n192311004,2026-10-08,L\n"
+    )
+    tmp = None
+    try:
+        with tempfile.NamedTemporaryFile("w", suffix=".csv", delete=False, encoding="utf-8") as tmp:
+            tmp.write(data)
+        print(summarise(tmp.name))
     finally:
-        if source is not None: source.close()
-    return valid,errors
+        if tmp is not None:
+            Path(tmp.name).unlink(missing_ok=True)
 
-if __name__=="__main__":
-    p=Path(__file__).parent/"data/attendance.txt"
+
+if __name__ == "__main__":
+    run_supplied_example()
     try:
-        rows,errors=process_file(p); print(f"valid={len(rows)} rejected={len(errors)}")
-        for error in errors: print(error)
-    except RuntimeError as exc: print(exc)
+        summarise(Path(__file__).parent / "data" / "does_not_exist.csv")
+    except FileNotFoundError as exc:
+        (Path(__file__).parent / "output" / "missing_file.log").parent.mkdir(parents=True, exist_ok=True)
+        (Path(__file__).parent / "output" / "missing_file.log").write_text(str(exc) + "\n", encoding="utf-8")
