@@ -1,0 +1,15 @@
+n=1,000 output_length=12,690 outputs_identical=True
+{'lines': 1000, 'method': 'plus_equals', 'run1_seconds': '0.000219100', 'run2_seconds': '0.000190900', 'run3_seconds': '0.000219500', 'average_seconds': '0.000209833', 'output_length': 12690}
+{'lines': 1000, 'method': 'join', 'run1_seconds': '0.000011800', 'run2_seconds': '0.000010600', 'run3_seconds': '0.000010300', 'average_seconds': '0.000010900', 'output_length': 12690}
+{'lines': 1000, 'method': 'fstring_join', 'run1_seconds': '0.000100800', 'run2_seconds': '0.000102900', 'run3_seconds': '0.000256500', 'average_seconds': '0.000153400', 'output_length': 12690}
+n=10,000 output_length=136,890 outputs_identical=True
+{'lines': 10000, 'method': 'plus_equals', 'run1_seconds': '0.001295800', 'run2_seconds': '0.001254200', 'run3_seconds': '0.001158500', 'average_seconds': '0.001236167', 'output_length': 136890}
+{'lines': 10000, 'method': 'join', 'run1_seconds': '0.000064100', 'run2_seconds': '0.000057800', 'run3_seconds': '0.000057400', 'average_seconds': '0.000059767', 'output_length': 136890}
+{'lines': 10000, 'method': 'fstring_join', 'run1_seconds': '0.000556800', 'run2_seconds': '0.000652800', 'run3_seconds': '0.000666000', 'average_seconds': '0.000625200', 'output_length': 136890}
+n=200,000 output_length=3,048,890 outputs_identical=True
+{'lines': 200000, 'method': 'plus_equals', 'run1_seconds': '0.525116100', 'run2_seconds': '0.582414000', 'run3_seconds': '0.557412400', 'average_seconds': '0.554980833', 'output_length': 3048890}
+{'lines': 200000, 'method': 'join', 'run1_seconds': '0.003870600', 'run2_seconds': '0.004549100', 'run3_seconds': '0.006013700', 'average_seconds': '0.004811133', 'output_length': 3048890}
+{'lines': 200000, 'method': 'fstring_join', 'run1_seconds': '0.020815500', 'run2_seconds': '0.022291100', 'run3_seconds': '0.021325900', 'average_seconds': '0.021477500', 'output_length': 3048890}
+CSV: C:\Users\SHEELA\Documents\ChatGPT\Project ackato\CSACS_RegisterNumber_Assignment2\Task04\timing_results.csv
+Analysis: immutable += may copy growing prefixes (worst-case quadratic); join is linear in output size; f-string formatting adds overhead.
+Streaming file writes use bounded buffer memory and O(total characters) I/O time.
