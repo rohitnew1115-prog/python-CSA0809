@@ -8,7 +8,7 @@ Six independently runnable tasks implement the SIMATS Assignment 4 requirements 
 
 ## Run
 
-From this folder, run `python Task01/solution.py` through `python Task06/main.py`. Each task reads its included sample data and writes outputs below its `output/` folder. Task 5 package: `python -m Task05.attendance_package`; Task 6: `python Task06/main.py`. Run all tests with `python -m unittest discover -s tests -v`.
+From this folder, run `python Task01/solution.py` through `python Task06/main.py`. Each task reads its included sample data and writes outputs below its `output/` folder. Task 5 package: `python -m Task05.attendance_package`; Task 5 organization examples: run scripts in `Task05/organization_examples/`; Task 6: `python Task06/main.py`. Run all tests with `python -m unittest discover -s tests -v`.
 
 ## Structure
 

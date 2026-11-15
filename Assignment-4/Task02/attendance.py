@@ -21,7 +21,7 @@ def process_month(input_dir: Path, output_dir: Path, roster: list[str], threshol
                     except ValueError as exc: errors.append(f"{path.name}:{line}: {exc}")
         except OSError as exc: errors.append(f"{path.name}: {exc}")
     output_dir.mkdir(parents=True,exist_ok=True)
-    days=max((v[1] for v in counts.values()),default=0)
+    days=len(files)
     with (output_dir/"attendance_percentages.csv").open("w",encoding="utf-8",newline="") as f:
         w=csv.writer(f); w.writerow(["register_number","present","scheduled_days","percentage"]);
         for reg,(present,total) in counts.items(): w.writerow([reg,present,days,f"{present/days*100:.2f}" if days else "0.00"])
