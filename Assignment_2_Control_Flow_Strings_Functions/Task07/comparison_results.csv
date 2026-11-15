@@ -1,0 +1,7 @@
+n,memo_seconds,iterative_seconds,loop_iterations,memo_status,same_result
+10,0.000031000,0.000013800,8,completed,True
+20,0.000020000,0.000008500,18,completed,True
+25,0.000022700,0.000005500,23,completed,True
+30,0.000022800,0.000005300,28,completed,True
+100,0.000502900,0.000023200,98,completed,True
+1000,,0.000143200,998,RecursionError,not comparable

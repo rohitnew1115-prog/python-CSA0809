@@ -1,0 +1,12 @@
+Diagnosis: plain recursion repeats subproblems exponentially; memo reduces repeated work but depth still grows with n.
+Objective: same answers through n=1000, no recursion-limit changes, O(1) algorithmic auxiliary space.
+Prediction: n=1000 requires 998 loop updates; memo recursion may fail at interpreter depth limit.
+ n | same result | memo time(s) | loop time(s) | iterations | memo status
+  10 | True         | 7.899943739175797e-06 |  0.000003700 |          8 | completed
+  20 | True         | 8.100061677396297e-06 |  0.000002900 |         18 | completed
+  25 | True         | 9.499955922365189e-06 |  0.000002200 |         23 | completed
+  30 | True         | 2.0999927073717117e-05 |  0.000003400 |         28 | completed
+ 100 | True         | 9.619991760700941e-05 |  0.000005700 |         98 | completed
+1000 | not comparable |            - |  0.000080200 |        998 | RecursionError
+Evaluation: exact equality for completed comparisons; n=1000 loop succeeds in 998 updates. Q7 objective achieved.
+Trade-off: iterative form is less directly recursive but removes O(n) cache and call stack; both recurrence counts are O(n).
