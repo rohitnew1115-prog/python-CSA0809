@@ -1,7 +1,7 @@
 # Assignment 2 — Control Flow, Strings and Functions
 
-**Student:** [Enter student name]  
-**Register number:** [Enter register number; repository folder currently uses a placeholder]  
+**Student:** P ROHIT  
+**Register number:** 1925260050 
 **Course:** Python Programming Lab  
 **Python:** 3.12.5 (execution environment)
 
