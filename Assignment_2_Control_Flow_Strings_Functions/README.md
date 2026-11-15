@@ -2,7 +2,7 @@
 
 **Student:** P ROHIT  
 **Register number:** 1925260050 
-**Course:** Python Programming Lab  
+**Course:** Python Programming   
 **Python:** 3.12.5 (execution environment)
 
 Seven independent, executable programs implement the assignment screenshots. The supplied guide and correction sheet informed edge-case handling; the screenshots remain the primary specification.
