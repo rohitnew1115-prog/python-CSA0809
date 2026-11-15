@@ -1,0 +1,11 @@
+Shared mutable default: ['Tea', 'Vada'] ['Tea', 'Vada']
+None default creates fresh lists: ['Tea'] ['Vada']
+customer, items, subtotal, tax, total = ('Asha', [('Tea', 10), ('Idli', 30)], 40, 2.0, 42.0)
+customer, items, subtotal, tax, total = ('Bala', [('Coffee', 20)], 20, 1.0, 21.0)
+customer, items, subtotal, tax, total = ('Charan', [('Vada', 15), ('Dosa', 40)], 55, 2.75, 57.75)
+global: 1
+closure/nonlocal: 1 2
+Positional arguments follow parameter order; keyword arguments name parameters; tax_rate is optional/defaulted.
+Tuple return provides five values; named data classes/dicts are another readable option.
+Avoid globals because hidden shared state harms testing/reuse; prefer explicit state or per-customer closures.
+List append amortised O(1); storing m items uses O(m) space.
