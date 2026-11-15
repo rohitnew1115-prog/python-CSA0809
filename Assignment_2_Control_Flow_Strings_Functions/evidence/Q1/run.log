@@ -1,0 +1,12 @@
+Q1 | Predicted outcomes tested against four implementations
+units= 80 ration=False senior>80=False -> Full subsidy
+units=100 ration=True  senior>80=False -> Full subsidy
+units=101 ration=False senior>80=False -> No subsidy
+units=150 ration=True  senior>80=False -> Partial subsidy
+units=200 ration=False senior>80=False -> No subsidy
+units=200 ration=True  senior>80=False -> Partial subsidy
+units=201 ration=True  senior>80=False -> No subsidy
+units=250 ration=False senior>80=True  -> Senior exception: subsidy
+Overlapping independent conditions demonstrate multiple decisions: ['broad first slab', 'middle slab']
+Complexity: chain/match O(1) time O(1) space; lookup O(k) time, O(k) table space.
+Conclusion: mutually exclusive if/elif with nested exception checks is clearest.
