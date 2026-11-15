@@ -3,12 +3,17 @@ from pathlib import Path
 import csv
 
 def process_month(input_dir: Path, output_dir: Path, roster: list[str], threshold: float=75.0):
-    counts={student:[0,0] for student in roster}; errors=[]; files=sorted(input_dir.glob("*.csv"))
+    counts={student:[0,0] for student in roster}; errors=[]
+    files=sorted(input_dir.glob("*.csv")) if input_dir.is_dir() else []
+    if not input_dir.is_dir(): errors.append(f"{input_dir}: input folder is missing")
+    elif not files: errors.append(f"{input_dir}: no daily attendance files found")
     for path in files:
         try:
             with path.open(encoding="utf-8", newline="") as source:
+                row_count=0
                 for line, row in enumerate(csv.reader(source),1):
                     if not row: continue
+                    row_count+=1
                     try:
                         if len(row)!=3: raise ValueError(f"expected 3 fields, found {len(row)}")
                         reg, day, status=(v.strip() for v in row)
@@ -19,6 +24,9 @@ def process_month(input_dir: Path, output_dir: Path, roster: list[str], threshol
                         counts[reg][1]+=1
                         if status=="P": counts[reg][0]+=1
                     except ValueError as exc: errors.append(f"{path.name}:{line}: {exc}")
+                if row_count==0: errors.append(f"{path.name}: empty attendance file")
+        except csv.Error as exc: errors.append(f"{path.name}: CSV error: {exc}")
+        except UnicodeDecodeError as exc: errors.append(f"{path.name}: encoding error: {exc}")
         except OSError as exc: errors.append(f"{path.name}: {exc}")
     output_dir.mkdir(parents=True,exist_ok=True)
     days=len(files)
