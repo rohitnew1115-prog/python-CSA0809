@@ -1,0 +1,4 @@
+experiment,n,method,bytes
+sensor_output,10000,comprehension_peak,47152
+sensor_output,100000,comprehension_peak,499952
+sensor_output,1000000,comprehension_peak,4688304

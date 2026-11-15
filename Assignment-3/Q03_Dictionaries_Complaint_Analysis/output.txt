@@ -1,0 +1,7 @@
+[('seeds', 3), ('price', 2), ('received', 2)]
+tie rule: alphabetical order places price before received.
+district groups: {'Salem': ['seeds delayed', 'fertiliser'], 'Erode': ['water shortage']} counts: {'Salem': 2, 'Erode': 1}
+crop groups: {'rice': ['seed complaint'], 'cotton': ['pest complaint']}
+edge tests: {} {'seeds': 2}
+dict expected O(n) average counting, O(d) space; repeated list.count per distinct word O(n*d). Hash lookup is average O(1), subject to collisions. Insertion order is guaranteed since Python 3.7; keys(), values(), items() are dynamic views.
+deployment: dict counting for 100,000 daily complaints; Counter is concise and optimized; choose benchmarked version and normalize text consistently.

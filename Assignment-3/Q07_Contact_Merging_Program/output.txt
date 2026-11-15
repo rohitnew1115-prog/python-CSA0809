@@ -1,0 +1,7 @@
+merged: [{'name': 'Dr. Ravi', 'phones': ['+919000011111', '+919840012345'], 'emails': ['ravi@example.com', 'rk@example.com'], 'also_known_as': ['Dr. Ravi', 'ravi kumar']}, {'name': 'Missing fields', 'phones': ['+919876543212'], 'emails': [], 'also_known_as': ['Missing fields']}, {'name': 'Same Name', 'phones': ['+919876543210'], 'emails': [], 'also_known_as': ['Same Name']}, {'name': 'Same Name', 'phones': ['+919876543211'], 'emails': [], 'also_known_as': ['Same Name']}]
+empty: []
+manual match: True
+1000 contacts average seconds: 0.008612233330495656
+10000 contacts average seconds: 0.1025108666702484
+design: contacts connect through canonical valid phones, including all numbers in one record; similar names alone never merge. Missing/invalid phone records are skipped. Limitation: shared/family phone numbers can combine distinct people; manual review or stronger identifiers is needed.
+pairwise comparison O(n^2); dictionary-backed disjoint sets group phone identities in near-linear O(p alpha(p)) time and O(p) space, for p unique phones. Name normalization is for display/search only, never identity.

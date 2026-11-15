@@ -1,0 +1,11 @@
+clash: ['192311004', '192311009']
+exactly_one: ['192311001', '192311002', '192311007', '192311010']
+neither: ['192311003', '192311005', '192311006', '192311008']
+operators equal methods: True
+Venn: intersection is center; symmetric difference is both outer-only regions; neither lies outside both circles but inside all_students.
+duplicates collapse by hashing; average set membership O(1), list membership O(n); tuples can be set members when elements hashable, lists cannot.
+small manual: {2} {1, 3} {3}
+empty: set() identical symmetric difference: set()
+duplicates removed: ['192311001', '192311004']
+complexity: nested pairwise O(n*m), O(1) extra; sort-and-walk O(n log n+m log m), O(n+m) depending copies; set operations average O(n+m), O(n+m) space.
+conversion to set removes duplicates and ordering/multiplicity information.

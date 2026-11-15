@@ -1,0 +1,13 @@
+bad: [[0, 7, 0, 0], [0, 7, 0, 0], [0, 7, 0, 0]]
+good: [[0, 7, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+tuple comparison: True False
+T. Nagar
+bad row identities: [2732599349568, 2732599349568, 2732599349568]
+good row identities: [2732602201088, 2732602200704, 2732602200640]
+shallow affects source: True deep independent: True
+unpacking: [(13.04818, 80.82341)]
+container bytes: 8000056 8000040 (elements shared; shallow sizes)
+creation seconds: 0.021901999949477613 0.01901799999177456
+mutable element in tuple: (['mutable', 'inside'],)
+tuple keys need immutable/hashable elements; list keys are mutable/unhashable. list argument mutation affects caller because both names reference same object.
+grid choices: list-of-lists O(1) access, O(r*c) space including empty cells; dict[(r,c)] average O(1), O(k) space for k occupied cells, but coordinate validation needed.

@@ -1,0 +1,12 @@
+nested example: {'name': 'Chennai Mail', 'stops': [('Chennai', '06:00', '06:10'), ('Katpadi', '08:15', '08:20'), ('Bengaluru', '11:00', '11:10')], 'days': {'Tue', 'Mon', 'Wed', 'Sat', 'Thu', 'Fri'}}
+third station departure: 11:10
+Katpadi Monday: [('08:20', '12601', 'Chennai Mail'), ('09:05', '12602', 'Coastal Express'), ('14:05', '12605', 'Delta Passenger')]
+unknown/day-filter/empty: [] [] []
+12601 Chennai Mail [('Chennai', '06:00', '06:10'), ('Katpadi', '08:15', '08:20'), ('Bengaluru', '11:00', '11:10')] ['Fri', 'Mon', 'Sat', 'Thu', 'Tue', 'Wed']
+12602 Coastal Express [('Chennai', '07:00', '07:05'), ('Katpadi', '09:00', '09:05'), ('Mysuru', '13:00', '13:10')] ['Fri', 'Mon', 'Wed']
+12603 Southern Link [('Coimbatore', '05:30', '05:35'), ('Chennai', '10:00', '10:10'), ('Katpadi', '12:00', '12:05')] ['Sat', 'Thu', 'Tue']
+12604 Hill City [('Chennai', '08:00', '08:05'), ('Salem', '11:00', '11:05'), ('Bengaluru', '15:00', '15:10')] ['Sun', 'Tue']
+12605 Delta Passenger [('Thanjavur', '04:00', '04:05'), ('Chennai', '12:00', '12:05'), ('Katpadi', '14:00', '14:05')] ['Fri', 'Mon', 'Sat', 'Sun', 'Thu', 'Tue', 'Wed']
+indexed Katpadi: [('12601', 'Chennai Mail', '08:20'), ('12602', 'Coastal Express', '09:05'), ('12605', 'Delta Passenger', '14:05')]
+dictionary train metadata lookup; list preserves route order; tuple is fixed station-time record; set supports running-day membership. Scan O(T*S); station index O(matches) average query after O(total stops) build, uses O(total stops) extra memory.
+flat list scan also O(total stops); index accelerates repeated station lookup at storage/build cost. Missing station/data returns empty result.

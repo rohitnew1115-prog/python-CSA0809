@@ -1,0 +1,3 @@
+n,method,seconds,index_bytes_shallow
+10000,scan,0.009899999985160926,0
+10000,index,1.266676311691602e-06,272
