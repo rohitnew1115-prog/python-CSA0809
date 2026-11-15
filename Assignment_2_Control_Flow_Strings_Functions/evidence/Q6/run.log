@@ -1,0 +1,18 @@
+n -> ways for 1..6
+1 1
+2 2
+3 3
+4 5
+5 8
+6 13
+n=5 call tree: W5 -> W4,W3; W4 -> W3,W2; each W3 -> W2,W1 (repeated W3 and W2).
+n=10 ways=89 naive_calls=177 memo_misses=11 naive_s=0.000021 memo_s=0.000006
+n=20 ways=10946 naive_calls=21891 memo_misses=21 naive_s=0.003756 memo_s=0.000018
+n=25 ways=121393 naive_calls=242785 memo_misses=26 naive_s=0.022874 memo_s=0.000022
+n=30 ways=1346269 naive_calls=2692537 memo_misses=31 naive_s=0.311283 memo_s=0.000062
+Expected check n=25: ways=121393, plain calls= 242785
+Python recursion limit: 1000
+memo n=1000 RecursionError: maximum recursion depth exceeded
+iterative n=1000 digits: 209
+Naive O(2^n) time/O(n) stack; memo O(n) time and O(n) cache+stack; iterative O(n) time/O(1) auxiliary space.
+Deployment recommendation: iterative for n up to 1000; memoization helps moderate n but recursion depth remains.
