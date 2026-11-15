@@ -1,0 +1,6 @@
+test_continues_after_invalid_duplicate_and_missing_files (test_fest_registration.FestRegistrationTests.test_continues_after_invalid_duplicate_and_missing_files) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.079s
+
+OK

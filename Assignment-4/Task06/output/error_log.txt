@@ -1,0 +1,3 @@
+department_mech.csv:1: duplicate registration 1925260050
+department_civil.csv:1: invalid email 'invalid-email'
+department_civil.csv:2: expected 5 fields, found 3

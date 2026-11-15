@@ -1,0 +1,5 @@
+register_number,name,department,email,events
+1925260050,P ROHIT,CSE,rohit@example.com,Music;Coding
+1925260051,Muruga Dharshini,ECE,muruga@example.com,Dance;Coding
+1925260052,Kavin S,EEE,kavin@example.com,Music;Drama
+1925260053,Arun Kumar,MECH,arun@example.com,Robotics

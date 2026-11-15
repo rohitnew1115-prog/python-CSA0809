@@ -1,2 +1,5 @@
-Drama: 2
-Music: 1
+Coding: 2
+Dance: 1
+Drama: 1
+Music: 2
+Robotics: 1

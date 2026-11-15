@@ -1,1 +1,0 @@
-"""College fest registration package."""

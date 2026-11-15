@@ -1,0 +1,3 @@
+Registrations: 5000
+List membership: 0.1291 seconds; retained=5000
+Set membership:  0.0012 seconds; retained=5000
