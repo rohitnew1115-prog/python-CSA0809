@@ -1,0 +1,86 @@
+Assignment 4 - captured terminal execution output
+
+===== Task01/evidence/run.txt =====
+Accepted 2 bills; total $2050.50; rejected 2
+line 3: expected 3 fields, found 2: invalid,row
+line 4: empty record
+
+===== Task01/evidence/benchmark.txt =====
+Rows: 50000; input bytes: 1250000
+read()+splitlines(): rows=50000, seconds=0.0683, peak_bytes=4854249
+line iteration: rows=50000, seconds=0.0362, peak_bytes=34501
+
+===== Task02/evidence/run.txt =====
+Processed 3 day(s), 9 records, 1 damaged row(s)
+
+===== Task03/evidence/complete_code.txt =====
+(1, 1, [(3, 'expected 3 fields, found 2'), (4, "invalid status 'L'")])
+
+===== Task03/evidence/processor.txt =====
+(1, 1, [(3, 'expected 3 fields, found 2'), (4, "invalid status 'L'")])
+
+===== Task03/evidence/broad_except.txt =====
+Program continued; the NameError was hidden.
+
+===== Task04/evidence/legacy.txt =====
+missing
+B005,M012B006,M013
+
+===== Task04/evidence/repaired.txt =====
+Processed 3 daily files; appended 6 returns; logged 1 error(s)
+
+===== Task05/evidence/version_a.txt =====
+1925260050: attendance=66.67% absent_3_consecutive=False
+1925260051: attendance=0.00% absent_3_consecutive=True
+1925260052: attendance=0.00% absent_3_consecutive=True
+
+===== Task05/evidence/version_b.txt =====
+1925260050: attendance=66.67% absent_3_consecutive=False
+1925260051: attendance=0.00% absent_3_consecutive=True
+1925260052: attendance=0.00% absent_3_consecutive=True
+
+===== Task05/evidence/version_c.txt =====
+Attendance percentages:
+1925260050: 66.67%
+1925260051: 0.00%
+1925260052: 0.00%
+Absent for three consecutive days: 1925260051, 1925260052
+
+===== Task05/evidence/version_d.txt =====
+Read 9 records; errors 0; three-day absences 2
+
+===== Task06/evidence/run.txt =====
+Accepted 4 registrations; rejected 3 rows
+
+===== Task06/evidence/missing_department_case.txt =====
+department_ece.csv: missing department file
+department_eee.csv: missing department file
+department_mech.csv: missing department file
+department_civil.csv: missing department file
+
+
+===== Task06/evidence/benchmark.txt =====
+Registrations: 5000
+List membership: 0.1291 seconds; retained=5000
+Set membership:  0.0012 seconds; retained=5000
+
+===== Task06/evidence/tests.txt =====
+test_continues_after_invalid_duplicate_and_missing_files (test_fest_registration.FestRegistrationTests.test_continues_after_invalid_duplicate_and_missing_files) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.079s
+
+OK
+
+===== screenshots/unittest.txt =====
+test_bills_valid_bad_and_missing (test_assignment.AssignmentTests.test_bills_valid_bad_and_missing) ... ok
+test_consecutive_absence (test_assignment.AssignmentTests.test_consecutive_absence) ... ok
+test_fest_duplicate_bad_email_damaged (test_assignment.AssignmentTests.test_fest_duplicate_bad_email_damaged) ... ok
+test_library_append_and_missing (test_assignment.AssignmentTests.test_library_append_and_missing) ... ok
+test_monthly_attendance_and_empty (test_assignment.AssignmentTests.test_monthly_attendance_and_empty) ... ok
+test_strict_record_and_missing_file (test_assignment.AssignmentTests.test_strict_record_and_missing_file) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.095s
+
+OK

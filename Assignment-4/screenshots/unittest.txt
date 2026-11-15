@@ -1,0 +1,11 @@
+test_bills_valid_bad_and_missing (test_assignment.AssignmentTests.test_bills_valid_bad_and_missing) ... ok
+test_consecutive_absence (test_assignment.AssignmentTests.test_consecutive_absence) ... ok
+test_fest_duplicate_bad_email_damaged (test_assignment.AssignmentTests.test_fest_duplicate_bad_email_damaged) ... ok
+test_library_append_and_missing (test_assignment.AssignmentTests.test_library_append_and_missing) ... ok
+test_monthly_attendance_and_empty (test_assignment.AssignmentTests.test_monthly_attendance_and_empty) ... ok
+test_strict_record_and_missing_file (test_assignment.AssignmentTests.test_strict_record_and_missing_file) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.095s
+
+OK

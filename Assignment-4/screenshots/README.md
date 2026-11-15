@@ -1,0 +1,1 @@
+Genuine execution evidence for Assignment 4 is stored as terminal output logs under each task evidence/ directory. This environment did not provide a terminal screenshot capture surface; no screenshots have been fabricated.
