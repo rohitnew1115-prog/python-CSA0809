@@ -1,0 +1,3 @@
+1925260050: attendance=66.67% absent_3_consecutive=False
+1925260051: attendance=0.00% absent_3_consecutive=True
+1925260052: attendance=0.00% absent_3_consecutive=True
