@@ -1,0 +1,10 @@
+stations,rows,csv_bytes,method,median_seconds,approx_measured_state_bytes,memory_measurement,repeats,correctness
+1,8760,487471,CSV loops,0.042298,47712,aggregation output object; Pandas uses full DataFrame deep size,3,identical
+1,8760,487471,Pandas groupby,0.024217,1463052,aggregation output object; Pandas uses full DataFrame deep size,3,identical
+1,8760,487471,SQLite GROUP BY,0.046979,47712,aggregation output object; Pandas uses full DataFrame deep size,3,identical
+12,105120,5854112,CSV loops,0.78987,497944,aggregation output object; Pandas uses full DataFrame deep size,3,identical
+12,105120,5854112,Pandas groupby,0.217486,17555172,aggregation output object; Pandas uses full DataFrame deep size,3,identical
+12,105120,5854112,SQLite GROUP BY,1.117578,497944,aggregation output object; Pandas uses full DataFrame deep size,3,identical
+100,876000,49066402,CSV loops,7.56897,4230800,aggregation output object; Pandas uses full DataFrame deep size,3,identical
+100,876000,49066402,Pandas groupby,2.507873,146292132,aggregation output object; Pandas uses full DataFrame deep size,3,identical
+100,876000,49066402,SQLite GROUP BY,16.639998,4230800,aggregation output object; Pandas uses full DataFrame deep size,3,identical

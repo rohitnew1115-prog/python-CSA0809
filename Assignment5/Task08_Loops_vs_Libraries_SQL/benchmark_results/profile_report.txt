@@ -1,0 +1,25 @@
+         61823 function calls in 0.061 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.016    0.016    0.061    0.061 .\Task03_Analysis_Visualisation\analysis.py:8(loop_daily_means)
+     8761    0.022    0.000    0.043    0.000 <python-user-dir>\Lib\csv.py:112(__next__)
+     8762    0.015    0.000    0.015    0.000 {built-in method builtins.next}
+    17521    0.003    0.000    0.003    0.000 <python-user-dir>\Lib\csv.py:98(fieldnames)
+    17520    0.003    0.000    0.003    0.000 {built-in method builtins.len}
+     8760    0.002    0.000    0.002    0.000 {method 'get' of 'dict' objects}
+      365    0.000    0.000    0.000    0.000 {built-in method builtins.round}
+       61    0.000    0.000    0.000    0.000 <frozen codecs>:319(decode)
+        1    0.000    0.000    0.000    0.000 {built-in method _io.open}
+       61    0.000    0.000    0.000    0.000 {built-in method _codecs.utf_8_decode}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.sorted}
+        1    0.000    0.000    0.000    0.000 {method '__exit__' of '_io._IOBase' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 <python-user-dir>\Lib\csv.py:84(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method _csv.reader}
+        1    0.000    0.000    0.000    0.000 <python-user-dir>\Lib\pathlib.py:447(__fspath__)
+        1    0.000    0.000    0.000    0.000 <frozen codecs>:309(__init__)
+        1    0.000    0.000    0.000    0.000 <python-user-dir>\Lib\pathlib.py:437(__str__)
+        1    0.000    0.000    0.000    0.000 <frozen codecs>:260(__init__)
+        1    0.000    0.000    0.000    0.000 <python-user-dir>\Lib\csv.py:95(__iter__)

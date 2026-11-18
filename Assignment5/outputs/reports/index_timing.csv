@@ -1,0 +1,2 @@
+query,before_index_seconds,after_index_seconds,repetitions
+station and month mean,0.00012135,0.00011825,30

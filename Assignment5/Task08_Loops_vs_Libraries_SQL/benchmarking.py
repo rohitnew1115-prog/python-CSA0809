@@ -1,6 +1,6 @@
 """Reproducible median timing study for loops, pandas and SQLite GROUP BY."""
 from __future__ import annotations
-import csv, sqlite3, time, timeit, cProfile, pstats, io, statistics, sys
+import csv, sqlite3, time, timeit, cProfile, pstats, io, statistics, sys, re
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -52,7 +52,9 @@ def run(outdir):
     prof=cProfile.Profile(); prof.enable(); loop_daily_means(path); prof.disable()
     prof.dump_stats(out/"loop_profile.prof")
     stream=io.StringIO(); pstats.Stats(prof,stream=stream).sort_stats("cumulative").print_stats(20)
-    (out/"profile_report.txt").write_text(stream.getvalue(),encoding="utf-8")
+    report=re.sub(r"[A-Za-z]:\\Users\\[^\\]+", "<python-user-dir>", stream.getvalue())
+    report=report.replace(str(Path(__file__).resolve().parents[1]), ".")
+    (out/"profile_report.txt").write_text(report,encoding="utf-8")
     # Keep the reproducible generator and measurements, not tens of megabytes of disposable input CSVs.
     for count in (1,12,100):
         (out/f"synthetic_{count}_stations.csv").unlink(missing_ok=True)

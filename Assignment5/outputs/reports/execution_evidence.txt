@@ -1,0 +1,40 @@
+Original CSV:
+station,date,hour,pm25,pm10,no2,co,temperature,temperature_unit
+Adyar,2026-10-01,0,48,71,18,0.4,77,F
+Adyar,2026-10-01,1,NA,70,17,0.3,25,C
+Adyar,2026-10-01,2,,-1,16,0.3,24,C
+Guindy,2026-10-01,0,95,120,30,0.7,26,C
+Guindy,2026-10-01,1,-5,82,25,0.5,25,C
+Guindy,2026-10-01,2,1001,88,20,0.4,24,C
+Guindy,2026-10-01,0,96,125,32,0.7,26,C
+Tambaram,31/10/2026,12,121,151,40,1.1,86,F
+Adyar,2026/10/01,9,52,77,19,0.4,24,C
+
+Cleaned CSV rows: [{'station': 'Adyar', 'date': '2026-10-01', 'hour': 0, 'pm25': 48.0, 'pm10': 71.0, 'no2': 18.0, 'co': 0.4, 'temperature_c': 25.0}, {'station': 'Guindy', 'date': '2026-10-01', 'hour': 0, 'pm25': 95.0, 'pm10': 120.0, 'no2': 30.0, 'co': 0.7, 'temperature_c': 26.0}, {'station': 'Tambaram', 'date': '2026-10-31', 'hour': 12, 'pm25': 121.0, 'pm10': 151.0, 'no2': 40.0, 'co': 1.1, 'temperature_c': 30.0}]
+Cleaned sample rows: 3
+Rejected rows and reasons: [(3, 'missing or invalid PM2.5'), (4, 'invalid pm10: pm10 outside accepted range 0..999'), (4, 'missing or invalid PM2.5'), (6, 'invalid pm25: pm25 outside accepted range 0..999'), (7, 'invalid pm25: pm25 outside accepted range 0..999'), (8, 'duplicate station timestamp'), (10, "unsupported date format: '2026/10/01'")]
+Starter cleaned records: [('Adyar', '2026-10-01', 48.0), ('Guindy', '2026-10-01', 95.0), ('Guindy', '2026-10-03', 121.0)]
+Starter min-max: [0.0, 0.644, 1.0]
+Cleaning >999 regression: [('Rohit', '2026-10-02', 3.0)]
+Adversarial missing column: ERROR: missing required columns: co, hour, no2, pm10, temperature, temperature_unit
+Adversarial wrong delimiter: ERROR: unable to detect CSV delimiter
+Adversarial different encoding (UTF-16): ERROR: unsupported encoding (UnicodeDecodeError)
+Adversarial empty file: ERROR: empty file
+Station averages Adyar/Guindy: 54.0 108.0
+October Adyar average: 54.0
+Sample station comparison: [('Adyar', 54.0), ('Guindy', 108.0)]
+Worst sampled day and mean: ('2026-10-03', 121.0)
+SQL injection result: None
+Three-method daily means identical: True groups: 1080
+Baseline manual-review agreement: 49/50 (98.0%)
+Improved manual-review agreement: 50/50 (100.0%)
+Extractive summary (3 sentences): The road is clean and the bus was fast. The staff were not helpful. Not bad, service improved.
+First-sentence baseline: The road is clean and the bus was fast.
+Extractive runtime seconds: 0.00042840
+Chatbot example: Latest PM25 at Adyar: 31.6 ug/m3 (2026-03-31T23:00:00).
+Database row counts: [('stations', 12), ('readings', 25920), ('complaints', 50), ('sentiment_results', 50), ('daily_summaries', 1080)]
+Database sample readings: [('Adyar', '2026-01-01T00:00:00', 25.48), ('Guindy', '2026-01-01T00:00:00', 26.79), ('Tambaram', '2026-01-01T00:00:00', 28.7)]
+Index timing evidence: [{'query': 'station and month mean', 'before_index_seconds': '0.00012135', 'after_index_seconds': '0.00011825', 'repetitions': '30'}]
+Benchmark result rows: [{'stations': '1', 'rows': '8760', 'csv_bytes': '487471', 'method': 'CSV loops', 'median_seconds': '0.042298', 'approx_measured_state_bytes': '47712', 'memory_measurement': 'aggregation output object; Pandas uses full DataFrame deep size', 'repeats': '3', 'correctness': 'identical'}, {'stations': '1', 'rows': '8760', 'csv_bytes': '487471', 'method': 'Pandas groupby', 'median_seconds': '0.024217', 'approx_measured_state_bytes': '1463052', 'memory_measurement': 'aggregation output object; Pandas uses full DataFrame deep size', 'repeats': '3', 'correctness': 'identical'}, {'stations': '1', 'rows': '8760', 'csv_bytes': '487471', 'method': 'SQLite GROUP BY', 'median_seconds': '0.046979', 'approx_measured_state_bytes': '47712', 'memory_measurement': 'aggregation output object; Pandas uses full DataFrame deep size', 'repeats': '3', 'correctness': 'identical'}, {'stations': '12', 'rows': '105120', 'csv_bytes': '5854112', 'method': 'CSV loops', 'median_seconds': '0.78987', 'approx_measured_state_bytes': '497944', 'memory_measurement': 'aggregation output object; Pandas uses full DataFrame deep size', 'repeats': '3', 'correctness': 'identical'}, {'stations': '12', 'rows': '105120', 'csv_bytes': '5854112', 'method': 'Pandas groupby', 'median_seconds': '0.217486', 'approx_measured_state_bytes': '17555172', 'memory_measurement': 'aggregation output object; Pandas uses full DataFrame deep size', 'repeats': '3', 'correctness': 'identical'}, {'stations': '12', 'rows': '105120', 'csv_bytes': '5854112', 'method': 'SQLite GROUP BY', 'median_seconds': '1.117578', 'approx_measured_state_bytes': '497944', 'memory_measurement': 'aggregation output object; Pandas uses full DataFrame deep size', 'repeats': '3', 'correctness': 'identical'}, {'stations': '100', 'rows': '876000', 'csv_bytes': '49066402', 'method': 'CSV loops', 'median_seconds': '7.56897', 'approx_measured_state_bytes': '4230800', 'memory_measurement': 'aggregation output object; Pandas uses full DataFrame deep size', 'repeats': '3', 'correctness': 'identical'}, {'stations': '100', 'rows': '876000', 'csv_bytes': '49066402', 'method': 'Pandas groupby', 'median_seconds': '2.507873', 'approx_measured_state_bytes': '146292132', 'memory_measurement': 'aggregation output object; Pandas uses full DataFrame deep size', 'repeats': '3', 'correctness': 'identical'}, {'stations': '100', 'rows': '876000', 'csv_bytes': '49066402', 'method': 'SQLite GROUP BY', 'median_seconds': '16.639998', 'approx_measured_state_bytes': '4230800', 'memory_measurement': 'aggregation output object; Pandas uses full DataFrame deep size', 'repeats': '3', 'correctness': 'identical'}]
+Monthly mean query on synthetic sample: 35.325483870967744
+Generated charts: ['benchmark_comparison.png', 'monthly_pm25_trend.png', 'station_comparison.png', 'temperature_vs_pm25.png', 'worst_air_quality_hours.png']

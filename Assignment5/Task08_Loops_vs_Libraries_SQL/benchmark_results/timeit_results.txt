@@ -1,0 +1,1 @@
+loop_daily_means repeat seconds (5 runs): 0.037072, 0.032244, 0.038175, 0.031539, 0.040172
