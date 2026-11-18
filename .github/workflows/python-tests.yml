@@ -1,0 +1,18 @@
+name: Python assignment checks
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Assignment5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python -m compileall -q Task01_Data_Acquisition Task02_Cleaning_Normalisation Task03_Analysis_Visualisation Task04_Debugging_Profiling Task05_AI_Applications Task06_Cleaning_Pipeline Task07_Adversarial_Data Task08_Loops_vs_Libraries_SQL Task09_Final_Engineering_Decision

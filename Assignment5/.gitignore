@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.tmp
+*.prof
+outputs/screenshots/*.png
+Task08_Loops_vs_Libraries_SQL/benchmark_results/synthetic_*_stations.csv
+report/rendered*/
+report/*_preview.pdf

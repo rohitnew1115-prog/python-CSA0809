@@ -1,0 +1,51 @@
+complaint_id,text,manual_label
+1,The road is clean and the bus was fast.,positive
+2,"Smoke from the factory makes the air bad.",negative
+3,The staff were not helpful.,negative
+4,"Not bad, service improved.",positive
+5,The park is clean and safe today.,positive
+6,Traffic smoke is terrible near the junction.,negative
+7,The air quality report was published this morning.,neutral
+8,The broken sensor has not been repaired.,negative
+9,The response team fixed the monitor quickly.,positive
+10,The road is dirty and the buses are slow.,negative
+11,There is no improvement in the smoke problem.,negative
+12,The station is operating as expected.,neutral
+13,Helpful staff cleaned the area.,positive
+14,The smell is bad and the air feels unsafe.,negative
+15,The complaint was received at noon.,neutral
+16,The reading is not good near the school.,negative
+17,The team improved the public dashboard.,positive
+18,Smoke was seen beside the main road.,negative
+19,The station did not report a reading today.,neutral
+20,The service was excellent and fast.,positive
+21,The road surface is broken again.,negative
+22,The air is clean after the repair.,positive
+23,No staff arrived to inspect the site.,negative
+24,The station name appears on the map.,neutral
+25,The response was rude and slow.,negative
+26,The new filter improved the air.,positive
+27,The temperature reading is 28 degrees.,neutral
+28,The monitor is not broken anymore.,positive
+29,Smoke continues to affect the neighborhood.,negative
+30,The city team gave a helpful update.,positive
+31,There was no change in the report.,neutral
+32,The bus stop is dirty and unsafe.,negative
+33,The maintenance team fixed the sensor.,positive
+34,The complaint form opened at 9 AM.,neutral
+35,The warning message was not helpful at all.,negative
+36,The park air is clean and pleasant.,positive
+37,The station reported a normal hourly value.,neutral
+38,The service is bad despite the update.,negative
+39,The new route is fast and safe.,positive
+40,The sensor cable is broken.,negative
+41,The daily summary is available online.,neutral
+42,The staff were never rude during inspection.,positive
+43,The smoke level remains high near the road.,negative
+44,The reading improved after maintenance.,positive
+45,The report lists PM2.5 and PM10 values.,neutral
+46,The response was not slow.,positive
+47,The old monitor was replaced.,neutral
+48,The area is dirty because collection was delayed.,negative
+49,The dashboard is clean and easy to use.,positive
+50,The team did not fix the broken monitor.,negative
