@@ -1,9 +1,9 @@
 # SIMATS Python Programming Assignment 5
 
-**Student:** P ROHIT  
-**Register number:** 1925260050  
-**Department:** SIMATS Engineering  
-**Subject:** CSA0809 Python Programming  
+**Student:** P ROHIT<br>
+**Register number:** 1925260050<br>
+**Department:** SIMATS Engineering<br>
+**Subject:** CSA0809 Python Programming<br>
 **Assignment:** 5 - Data Acquisition, Cleaning, Analysis and AI Applications
 
 This project implements the air-quality data workflow with CSV ingestion, validation and normalization, SQLite storage, four visualizations, adversarial-input handling, reproducible loop/Pandas/SQL benchmarks, profiling, sentiment scoring, extractive summarization and a rule-based database chatbot. All generated readings and complaints are synthetic; they are not observations from Chennai or any other real monitoring network.
@@ -77,5 +77,5 @@ The SQLite database contains station, reading, complaint, sentiment and daily-su
 
 ## GitHub
 
-Repository: https://github.com/rohitnew1115-prog/python-CSA0809  
+Repository: https://github.com/rohitnew1115-prog/python-CSA0809<br>
 Assignment folder: `Assignment5/`

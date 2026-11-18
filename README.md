@@ -9,3 +9,12 @@ Assignment 2 (Control Flow, Strings and Functions) is in [Assignment_2_Control_F
 - Measurement plots: `Assignment_2_Control_Flow_Strings_Functions/graphs/`.
 
 The assignment folder retains student name and register number blanks until supplied. Existing repository files are preserved.
+
+## Assignment 5 - Data Acquisition, Cleaning, Analysis and AI
+
+The completed SIMATS Python Programming Assignment 5 project is in [Assignment5](Assignment5/). It contains the Word report, executable CSV/SQLite analysis, synthetic datasets, charts, benchmark evidence, AI examples, tests and GitHub Actions workflow.
+
+- Student: P ROHIT, Register number: 1925260050.
+- Start with [the Assignment 5 README](Assignment5/README.md) for install and run instructions.
+- Open the [Assignment 5 report](Assignment5/report/Assignment_5_Report.docx).
+- All air-quality and complaint examples in Assignment 5 are synthetic, not real measurements.
